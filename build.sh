@@ -21,4 +21,7 @@ python manage.py collectstatic --no-input
 echo "=== Ejecutando migraciones ==="
 python manage.py migrate --no-input
 
+echo "=== Poblando base de datos ==="
+python populate_data.py
+
 echo "=== Build completado ==="
