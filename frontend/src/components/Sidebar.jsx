@@ -6,7 +6,7 @@ const Sidebar = ({ datos, referencias }) => {
   return (
     <aside className="sidebar">
       <div className="profile-photo">
-        <img src="/assets/perfil.png" alt="Foto de perfil" />
+        <img src="/static/assets/perfil.png" alt="Foto de perfil" />
       </div>
 
       <div className="contact-info">
