@@ -1,59 +1,69 @@
 import React from 'react';
 
-const Sidebar = ({ datos, referencias }) => {
+const Sidebar = ({ datos, referencias, activeSection, setActiveSection, onDownloadPDF, isPrinting }) => {
   if (!datos) return null;
+
+  const menuItems = [
+    { id: 'home', label: 'INICIO', icon: '🏠' },
+    { id: 'experiencia', label: 'EXPERIENCIA', icon: '💼' },
+    { id: 'formacion', label: 'FORMACIÓN', icon: '🎓' },
+    { id: 'referencias', label: 'REFERENCIAS', icon: '👥' },
+  ];
 
   return (
     <aside className="sidebar">
-      <div className="profile-photo">
-        <img src="/static/assets/perfil.png" alt="Foto de perfil" />
-      </div>
+      <div className="profile-container">
+        <div className="profile-img-wrapper">
+          <img src="/assets/perfil.png" alt="Profile" className="profile-img" />
+        </div>
 
-      <div className="contact-info">
-        <h2>Contacto</h2>
-        <div className="contact-item">
-          <strong>Teléfono</strong>
-          {datos.telefono}
-        </div>
-        <div className="contact-item">
-          <strong>Email</strong>
-          <a href={`mailto:${datos.email}`}>{datos.email}</a>
-        </div>
-        <div className="contact-item">
-          <strong>Dirección</strong>
-          {datos.direccion}
-        </div>
-      </div>
+        <nav className="sidebar-menu">
+          {menuItems.map((item) => (
+            <button
+              key={item.id}
+              className={`menu-button ${activeSection === item.id ? 'active' : ''}`}
+              onClick={() => setActiveSection(item.id)}
+            >
+              <span className="menu-icon">{item.icon}</span>
+              {item.label}
+            </button>
+          ))}
+        </nav>
 
-      <div className="contact-info">
-        <h2>Datos Personales</h2>
-        <div className="contact-item">
-          <strong>Cédula</strong>
-          {datos.cedula}
-        </div>
-        <div className="contact-item">
-          <strong>Estado Civil</strong>
-          {datos.estado_civil}
-        </div>
-        <div className="contact-item">
-          <strong>Fecha de Nacimiento</strong>
-          {datos.fecha_nacimiento}
-        </div>
-        <div className="contact-item">
-          <strong>Edad</strong>
-          {datos.edad} años
-        </div>
-      </div>
-
-      <div className="contact-info">
-        <h2>Referencias</h2>
-        {referencias.map((ref, index) => (
-          <div key={index} className="contact-item" style={{ marginBottom: '15px' }}>
-            <strong>{ref.nombre}</strong>
-            <div>Telf: {ref.telefono}</div>
-            {ref.email && <div>Email: {ref.email}</div>}
+        {!isPrinting && (
+          <div className="pdf-buttons">
+            <button className="pdf-button" onClick={() => onDownloadPDF('full')}>
+              <span className="icon">📥</span> CV COMPLETO
+            </button>
+            <button className="pdf-button" onClick={() => onDownloadPDF('section')}>
+              <span className="icon">📄</span> SOLO SECCIÓN
+            </button>
           </div>
-        ))}
+        )}
+      </div>
+
+      <div className="sidebar-section contact-section">
+        <h2 className="sidebar-title">CONTACTO</h2>
+        <div className="contact-list">
+          <div className="contact-item">
+            <span className="icon">📞</span>
+            <div className="contact-text">
+              <span className="value">{datos.telefono}</span>
+            </div>
+          </div>
+          <div className="contact-item">
+            <span className="icon">✉️</span>
+            <div className="contact-text">
+              <span className="value">{datos.email}</span>
+            </div>
+          </div>
+          <div className="contact-item">
+            <span className="icon">📍</span>
+            <div className="contact-text">
+              <span className="value">{datos.direccion}</span>
+            </div>
+          </div>
+        </div>
       </div>
     </aside>
   );
