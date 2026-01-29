@@ -1,4 +1,5 @@
 import React from 'react';
+import profileImg from '../assets/perfil.png';
 
 const Sidebar = ({ datos, referencias, activeSection, setActiveSection, onDownloadPDF, isPrinting }) => {
   if (!datos) return null;
@@ -14,7 +15,7 @@ const Sidebar = ({ datos, referencias, activeSection, setActiveSection, onDownlo
     <aside className="sidebar">
       <div className="profile-container">
         <div className="profile-img-wrapper">
-          <img src="/assets/perfil.png" alt="Profile" className="profile-img" />
+          <img src={profileImg} alt="Profile" className="profile-img" />
         </div>
 
         <nav className="sidebar-menu">
