@@ -90,6 +90,5 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'frontend' / 'dist' / 'assets',
     BASE_DIR / 'frontend' / 'dist',
 ]
