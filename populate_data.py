@@ -46,6 +46,16 @@ def poblar_datos():
         cargo="ATENCION AL CLIENTE",
         descripcion="ATENCION AL CLIENTE EN LOCAL DE LOTERA NACIONAL cc.multiplaza"
     )
+    ExperienciaLaboral.objects.create(
+        empresa="CC",
+        cargo="ATENCION AL CLIENTE",
+        descripcion="ATENCION AL CLIENTE"
+    )
+    ExperienciaLaboral.objects.create(
+        empresa="DISTRIBUIDORA DE ALIMENTOS Y BEBIDAS S.A. (DABSA)",
+        cargo="AUXILIAR DE BODEGA",
+        descripcion="TRABAJO EN BODEGA DE DISTRIBUIDORA DE ALIMENTOS Y BEBIDAS S.A. (DABSA)"
+    )
 
     # Referencias Personales
     print("Poblando Referencias Personales...")
