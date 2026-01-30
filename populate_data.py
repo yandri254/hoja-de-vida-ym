@@ -19,7 +19,9 @@ def poblar_datos():
         edad=26,
         direccion="Manta - Nuevo Tarqui - 5 de junio",
         telefono="0999380605",
-        email="yairvelez050@gmail.com"
+        email="yairvelez050@gmail.com",
+        titulo_profesional="INGENIERO EN TECNOLOGÍAS DE LA INFORMACIÓN Y LA COMUNICACIÓN",
+        perfil="Estudiante apasionado por las tecnologías de la información con experiencia en atención al cliente y logística. Enfocado en el desarrollo continuo y la aplicación de soluciones tecnológicas eficaces."
     )
 
     # Formacion Academica
