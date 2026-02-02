@@ -45,6 +45,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  /* Make sidebar sticky on large screens */
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .profile-img-wrapper {
@@ -454,6 +459,10 @@ body {
     width: 100%;
     padding: 20px;
     gap: 20px;
+    position: sticky;
+    top: 0;
+    height: auto;
+    z-index: 1000;
   }
 
   .sidebar-menu {
