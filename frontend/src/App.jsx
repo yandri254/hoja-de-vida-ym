@@ -50,21 +50,13 @@ function App() {
 
     if (mode === 'full') {
       setIsPrinting(true);
-      // Wait for the state to update and DOM to render all sections
       setTimeout(() => {
         generatePDF('completo');
       }, 800);
     } else {
-      // Download current view immediately
-      // Add temporary class for styling
       const element = document.querySelector('.resume-layout');
       element.classList.add('pdf-section-mode');
-
       generatePDF(activeSection);
-
-      // Remove class after a short delay to ensure capture is done
-      // Note: html2pdf is async, but we don't have a promise returned from generatePDF here easily without refactoring.
-      // However, html2pdf().save() returns a promise. Let's update generatePDF to return it.
     }
   };
 
@@ -88,6 +80,11 @@ function App() {
           formacion={cvData.formacion}
           experiencia={cvData.experiencia}
           referencias={cvData.referencias}
+          reconocimientos={cvData.reconocimientos}
+          cursos={cvData.cursos}
+          productosAcademicos={cvData.productos_academicos}
+          productosLaborales={cvData.productos_laborales}
+          ventasGarage={cvData.ventas_garage}
           activeSection={activeSection}
           isPrinting={isPrinting}
         />

@@ -7,6 +7,10 @@ const Sidebar = ({ datos, referencias, activeSection, setActiveSection, onDownlo
     { id: 'home', label: 'INICIO', icon: '🏠' },
     { id: 'experiencia', label: 'EXPERIENCIA', icon: '💼' },
     { id: 'formacion', label: 'FORMACIÓN', icon: '🎓' },
+    { id: 'reconocimientos', label: 'RECONOCIMIENTOS', icon: '🏆' },
+    { id: 'cursos', label: 'CURSOS', icon: '📚' },
+    { id: 'productos', label: 'PRODUCTOS', icon: '📦' },
+    { id: 'garage', label: 'GARAGE', icon: '🏷️' },
     { id: 'referencias', label: 'REFERENCIAS', icon: '👥' },
   ];
 
@@ -50,24 +54,38 @@ const Sidebar = ({ datos, referencias, activeSection, setActiveSection, onDownlo
       <div className="sidebar-section contact-section">
         <h2 className="sidebar-title">CONTACTO</h2>
         <div className="contact-list">
-          <div className="contact-item">
-            <span className="icon">📞</span>
-            <div className="contact-text">
-              <span className="value">{datos.telefono}</span>
+          {datos.telefono_convencional && (
+            <div className="contact-item">
+              <span className="icon">📞</span>
+              <div className="contact-text">
+                <span className="value">{datos.telefono_convencional}</span>
+              </div>
             </div>
-          </div>
-          <div className="contact-item">
-            <span className="icon">✉️</span>
-            <div className="contact-text">
-              <span className="value">{datos.email}</span>
+          )}
+          {datos.email && (
+            <div className="contact-item">
+              <span className="icon">✉️</span>
+              <div className="contact-text">
+                <span className="value">{datos.email}</span>
+              </div>
             </div>
-          </div>
-          <div className="contact-item">
-            <span className="icon">📍</span>
-            <div className="contact-text">
-              <span className="value">{datos.direccion}</span>
+          )}
+          {datos.direccion_domiciliaria && (
+            <div className="contact-item">
+              <span className="icon">📍</span>
+              <div className="contact-text">
+                <span className="value">{datos.direccion_domiciliaria}</span>
+              </div>
             </div>
-          </div>
+          )}
+          {datos.sitio_web && (
+            <div className="contact-item">
+              <span className="icon">🌐</span>
+              <div className="contact-text">
+                <span className="value">{datos.sitio_web}</span>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </aside>

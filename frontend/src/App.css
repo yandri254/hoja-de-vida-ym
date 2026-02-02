@@ -449,6 +449,197 @@ body {
   margin-bottom: 5px;
 }
 
+/* Courses Grid */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.course-card {
+  background: var(--bg-grey);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.course-name {
+  margin: 0 0 10px;
+  color: var(--primary-dark);
+  font-size: 1.1rem;
+}
+
+.course-institution {
+  font-weight: 600;
+  color: var(--text-grey);
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.course-hours {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.course-period {
+  font-size: 0.85rem;
+  color: var(--text-grey);
+  margin: 5px 0;
+}
+
+.course-description {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+/* Products Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: var(--bg-grey);
+  padding: 20px;
+  border-radius: 8px;
+  border-top: 3px solid var(--primary-dark);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-name {
+  margin: 0 0 10px;
+  color: var(--primary-dark);
+  font-size: 1.1rem;
+}
+
+.product-category {
+  margin-bottom: 10px;
+}
+
+.product-date {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.product-description {
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+/* Garage Grid */
+.garage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.garage-card {
+  background: var(--bg-grey);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.garage-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.garage-name {
+  margin: 0 0 10px;
+  color: var(--primary-dark);
+  font-size: 1.1rem;
+}
+
+.garage-state {
+  margin-bottom: 10px;
+}
+
+.garage-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #27ae60;
+  margin: 10px 0;
+}
+
+.garage-description {
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge-académico {
+  background-color: #3498db;
+  color: white;
+}
+
+.badge-público {
+  background-color: #27ae60;
+  color: white;
+}
+
+.badge-privado {
+  background-color: #9b59b6;
+  color: white;
+}
+
+.badge-bueno {
+  background-color: #27ae60;
+  color: white;
+}
+
+.badge-regular {
+  background-color: #f39c12;
+  color: white;
+}
+
+/* Item type and location */
+.item-type {
+  margin: 8px 0;
+}
+
+.item-location {
+  font-size: 0.85rem;
+  color: var(--text-grey);
+  margin-top: 3px;
+}
+
+.item-contact {
+  font-size: 0.85rem;
+  color: var(--text-grey);
+  margin-top: 5px;
+}
+
 /* Responsive */
 @media (max-width: 850px) {
   .resume-layout {
@@ -475,6 +666,8 @@ body {
     flex: 1;
     justify-content: center;
     white-space: nowrap;
+    font-size: 0.8rem;
+    padding: 10px 8px;
   }
 
   .main-content {
@@ -483,5 +676,11 @@ body {
 
   .name {
     font-size: 2rem;
+  }
+
+  .courses-grid,
+  .products-grid,
+  .garage-grid {
+    grid-template-columns: 1fr;
   }
 }
