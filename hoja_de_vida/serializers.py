@@ -4,7 +4,7 @@ from .models import DatosPersonales, FormacionAcademica, ExperienciaLaboral, Ref
 class DatosPersonalesSerializer(serializers.ModelSerializer):
     class Meta:
         model = DatosPersonales
-        fields = ['nombres', 'apellidos', 'estado_civil', 'cedula', 'fecha_nacimiento', 'edad', 'direccion', 'telefono', 'email', 'titulo_profesional', 'perfil']
+        fields = '__all__'
 
 class FormacionAcademicaSerializer(serializers.ModelSerializer):
     class Meta:

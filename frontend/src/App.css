@@ -211,14 +211,6 @@ body {
   margin-top: 20px;
 }
 
-.profile-summary {
-    line-height: 1.8;
-    color: var(--text-dark);
-    font-size: 1.05rem;
-    margin-bottom: 30px;
-    text-align: justify;
-}
-
 /* Content Sections */
 .content-section {
   animation: fadeIn 0.5s ease-in-out;

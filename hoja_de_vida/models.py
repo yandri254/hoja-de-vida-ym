@@ -10,8 +10,6 @@ class DatosPersonales(models.Model):
     direccion = models.CharField(max_length=255)
     telefono = models.CharField(max_length=20)
     email = models.EmailField()
-    titulo_profesional = models.CharField(max_length=150, blank=True, null=True)
-    perfil = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return f"{self.nombres} {self.apellidos}"
