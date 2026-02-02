@@ -13,7 +13,7 @@ function App() {
   const [isPrinting, setIsPrinting] = useState(false);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/cv/')
+    axios.get('/api/cv/')
       .then(response => {
         setCvData(response.data);
         setLoading(false);
