@@ -12,6 +12,7 @@ class DatosPersonales(models.Model):
     email = models.EmailField()
     titulo_profesional = models.CharField(max_length=200, blank=True, null=True)
     perfil = models.TextField(blank=True, null=True)
+    imagen = models.ImageField(upload_to='perfil/', blank=True, null=True)
 
     def __str__(self):
         return f"{self.nombres} {self.apellidos}"

@@ -74,5 +74,14 @@ def poblar_datos():
 
     print("Población de datos completada.")
 
+    # Crear Superusuario
+    from django.contrib.auth.models import User
+    if not User.objects.filter(username='admin').exists():
+        print("Creando superusuario 'admin'...")
+        User.objects.create_superuser('admin', 'admin@example.com', 'admin123')
+        print("Superusuario creado.")
+    else:
+        print("El superusuario 'admin' ya existe.")
+
 if __name__ == '__main__':
     poblar_datos()

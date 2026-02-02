@@ -14,7 +14,12 @@ const Sidebar = ({ datos, referencias, activeSection, setActiveSection, onDownlo
     <aside className="sidebar">
       <div className="profile-container">
         <div className="profile-img-wrapper">
-          <img src="/assets/perfil.png" alt="Profile" className="profile-img" />
+          <img
+            src={datos.imagen ? datos.imagen : "/static/assets/perfil.png"}
+            alt="Profile"
+            className="profile-img"
+            onError={(e) => { e.target.src = 'https://via.placeholder.com/150'; }}
+          />
         </div>
 
         <nav className="sidebar-menu">

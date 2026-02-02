@@ -7,11 +7,19 @@ const MainContent = ({ datos, formacion, experiencia, referencias, activeSection
         <main className="main-content" id="resume-content">
             <header className="main-header">
                 <h1 className="name">{datos.nombres} <span className="surname">{datos.apellidos}</span></h1>
-                <p className="job-title">PERFIL PROFESIONAL</p>
+                <p className="job-title">{datos.titulo_profesional || 'PERFIL PROFESIONAL'}</p>
                 <div className="header-line"></div>
             </header>
 
             <div className="content-body">
+                {(activeSection === 'home' || isPrinting) && (
+                    <section className="content-section fade-in">
+                        <h2 className="section-title">
+                            <span className="title-icon">📝</span> PERFIL PROFESIONAL
+                        </h2>
+                        <p className="profile-description">{datos.perfil}</p>
+                    </section>
+                )}
                 {(activeSection === 'home' || isPrinting) && (
                     <section className="content-section fade-in">
                         <h2 className="section-title">
